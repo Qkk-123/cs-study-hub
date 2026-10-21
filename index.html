@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>知序 · 学业攻坚</title>
+<title>知之为知之</title>
 <style>
 :root{--bg:#0a0e17;--bg2:#0f1522;--card:#141c2e;--border:#263149;--border-hi:#3b4c70;--fg:#eef2fa;--muted:#8b97b0;--dim:#5b6780;--phy:#a78bfa;--phy-soft:rgba(167,139,250,.13);--org:#22d3ee;--org-soft:rgba(34,211,238,.13);--ds:#34d399;--ds-soft:rgba(52,211,153,.13);--warn:#fbbf24;--danger:#f87171;--fd:'Segoe UI',system-ui,-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;--fb:system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;--fm:ui-monospace,'SF Mono','Cascadia Code',Consolas,'Courier New',monospace;--tr:.28s cubic-bezier(.16,1,.3,1)}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -323,8 +323,7 @@ nav .navind{position:absolute;top:50%;transform:translateY(-50%);height:36px;bor
 .rstep p{margin:0;font-size:12.5px;line-height:1.8;color:var(--muted,#9aa6bd)}
 
 /* ===== v44 主题页润色 ===== */
-.sccard[data-go="#/s/pr"] .ic{position:relative}
-.sccard[data-go="#/s/pr"] .ic::after{content:'延伸';position:absolute;top:-7px;right:-12px;font-family:var(--fm);font-size:9px;letter-spacing:.06em;padding:1px 5px;border-radius:6px;background:var(--ac);color:#0b0e14;font-weight:700;opacity:.9}
+
 .hero h1{letter-spacing:-.01em}
 
 /* ---- 首页卡片（Bento + Star Border + Spotlight + 3D tilt） ---- */
@@ -814,7 +813,7 @@ main.wrap,nav,footer{position:relative;z-index:1}
 </head>
 <body>
 <nav><div class="nin">
-<div class="logo" data-go="#/"><span class="dot"></span>知序<span class="logosub">学业攻坚</span></div>
+<div class="logo" data-go="#/"><span class="dot"></span>知之为知之<span class="logosub">学业攻坚</span></div>
 <div class="nlinks">
 <button data-nav="home" data-go="#/"><span class="ni"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/><path d="M10 21v-6h4v6"/></svg></span>首页</button>
 <button data-nav="phy" data-go="#/s/phy"><span class="ni"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="2.2" fill="currentColor" stroke="none"/><ellipse cx="12" cy="12" rx="10" ry="4.2"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(120 12 12)"/></svg></span><span class="lbl">大学物理</span></button>
@@ -825,9 +824,9 @@ main.wrap,nav,footer{position:relative;z-index:1}
 <main class="wrap">
 <section class="view on" id="v-home">
 <header class="hero">
-<div class="badge">大二 · 计算机科学与技术 · 三门薄弱课攻坚</div>
+<div class="badge">大二 · 计算机科学与技术 · 四门薄弱课攻坚</div>
 <h1>课上知其然<br>卷上答其<span class="g">所以然</span></h1>
-<p>三门薄弱课，各有一张<b>知识星图</b>：先在地图上寻见这一章的位置与来路，再进单元把<b>定义 · 公式 · 推导</b>逐层啃透，最后照<b>规范作答</b>，把解题过程写成卷面上拿得住分的样子。</p>
+<p>四门薄弱课，各有一张<b>知识星图</b>：先在地图上寻见这一章的位置与来路，再进单元把<b>定义 · 公式 · 推导</b>逐层啃透，最后照<b>规范作答</b>，把解题过程写成卷面上拿得住分的样子。</p>
 </header>
 <div class="cgrid" id="homeCards"></div>
 <div class="route">
@@ -2735,8 +2734,7 @@ window.addEventListener('resize', ()=>{ const m=(location.hash||'').match(/^#\/s
     walk(h1);
   }
   function statsOf(){
-    const WEAK=['ds','phy','org'];
-    const keys=WEAK.filter(function(k){ return DATA[k] && DATA[k].units; });
+    const keys=Object.keys(DATA).filter(function(k){ return DATA[k] && DATA[k].units; });
     let units=0, kp=0;
     keys.forEach(function(k){
       const s=DATA[k]; if(!s||!s.units) return;
